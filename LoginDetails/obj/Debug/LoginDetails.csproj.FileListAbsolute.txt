@@ -80,3 +80,4 @@ E:\.NET_project\LoginDetails\LoginDetails\obj\Debug\LoginDetails.csproj.CoreComp
 E:\.NET_project\LoginDetails\LoginDetails\obj\Debug\LoginDetails.csproj.CopyComplete
 E:\.NET_project\LoginDetails\LoginDetails\obj\Debug\LoginDetails.dll
 E:\.NET_project\LoginDetails\LoginDetails\obj\Debug\LoginDetails.pdb
+E:\.NET_project\LoginDetails\LoginDetails\obj\Debug\LoginDetails.csprojAssemblyReference.cache

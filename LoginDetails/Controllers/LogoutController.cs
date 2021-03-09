@@ -24,7 +24,7 @@ namespace LoginDetails.Controllers
         public ActionResult Logout()
         {
             Session.Abandon();
-            return RedirectToAction("Login", "LoginSignUp");
+            return RedirectToAction("AdminLogin", "LoginSignUp");
         }
     }
 }

@@ -15,6 +15,8 @@ namespace LoginDetails.Controllers
         {
             return View();
         }
+        //for user login
+
         public ActionResult Login()
         {
             return View("Login");
@@ -37,7 +39,7 @@ namespace LoginDetails.Controllers
             }
 
         }
-
+        //for user
         public ActionResult SignUP()
         {
             return View("signUP");
@@ -62,5 +64,56 @@ namespace LoginDetails.Controllers
             }
             return View();
         }
+
+        public ActionResult AdminLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AdminLogin(Admin log)
+        {
+            var data = context.Admins.Where(model => model.userid == log.userid && model.password == log.password).FirstOrDefault();
+            if (data != null)
+            {
+                Session["userId"] = log.Id.ToString();
+                Session["username"] = log.userid.ToString();
+                TempData["loginmessage"] = "<script>alert('Login Successfull!')</script>";
+                return RedirectToAction("Index", "Logout");
+            }
+            else
+            {
+                ViewData["errormessage"] = "<script>alert('Username or Password is incorrect!!')</script>";
+                return View();
+            }
+
+        }
+
+        public ActionResult AdminSignup()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AdminSignup(Admin l)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Admins.Add(l);
+                int status = context.SaveChanges();
+                if (status > 0)
+                {
+
+                    ViewBag.Messages = "<script>alert('Registration done Successfully!')</script>";
+                    ModelState.Clear();
+                }
+            }
+            else
+            {
+                ViewBag.Messages = "<script>alert('Registration Unsuccessfull!!')</script>";
+            }
+            return View();
+        }
+
+
+
     }
 }

@@ -21,13 +21,14 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("CUSTOMER", "Login", "LoginSignUp")</li>
-                    <li>@Html.ActionLink("ADMIN", "Login", "LoginSignUp")</li>                    
+                    <li>@Html.ActionLink("ADMIN", "AdminLogin", "LoginSignUp")</li>                    
                 </ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
+       
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
