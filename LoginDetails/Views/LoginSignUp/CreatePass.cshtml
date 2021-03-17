@@ -1,0 +1,35 @@
+﻿@model IEnumerable<LoginDetails.Models.User>
+
+@{
+    ViewBag.Title = "CreatePass";
+}
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+       
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+ {  
+    if (item.Email== "suman933@gmail.com") 
+    {
+<tr>
+    <td style="background-color:#32a852;color:darkred;font-size:x-large">
+        @Html.DisplayFor(modelItem => item.Password)
+    </td>
+
+</tr>
+    }
+}
+
+</table>
+<div>
+    @Html.ActionLink("Back to Login Page", "Login")
+</div>

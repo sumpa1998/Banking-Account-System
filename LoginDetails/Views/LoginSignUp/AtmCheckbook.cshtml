@@ -1,0 +1,137 @@
+﻿
+@{
+    ViewBag.Title = "AtmCheckbook";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+       
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f5e4;
+            background-attachment:fixed;
+        }
+       
+        /* Overwrite default styles of hr */
+        hr {
+            border: 1px solid #f1f1f1cc;
+            margin-bottom: 25px;
+        }
+
+        /* Set a style for the submit button */
+        .submitbtn {
+            background-color: #41a6bf;
+            color: #d6d31c;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+            .submitbtn:hover {
+                opacity: 1;
+            }
+
+       
+    </style>
+    <script>
+        function validateForm() {
+            var Name = document.getElementById("name");
+            var Acno = document.getElementById("acno");
+            var Address = document.getElementById("address");
+            var Phone = document.getElementById("phone");
+            var Email = document.getElementById("email");
+
+            if (Name.value.trim() == "" || Acno.value.trim() == "" || Address.value.trim() == ""
+                || Phone.value.trim() == "" || Email.value.trim() == "") {
+                alert("Please fill in all the required fields");
+                return false;
+
+            }
+            else {
+                true;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <form name="atmForm" action="UserDashboard" onsubmit="return validateForm()">
+        <div class="container">
+            <h2>Application Form For ATM Cards</h2>
+            <p>
+                Thank you for applying for the ATM Card. To help us Process your
+                request quickly , please fill this form as per the instructions
+                below . If you have any questions , please check with your Branch
+                Manager , We are committed to making your life simpler with the
+                ATM Card.
+            </p>
+            <h3>IMPORTANT INSTRUCTIONS</h3>
+            <ul>
+                <li>Please fill the entire form in CAPITAL LETTERS only.</li>
+                <li>Complete all sections.</li>
+                <li>Sign the declaration.</li>
+            </ul>
+            <hr>
+            <table border="1" align="center" width=800 bgcolor="#CCCCCC">
+                <caption><h2>ATM Card Application form</h2></caption>
+                <tr>
+                    <th><b>Account Holder Name</b></th>
+                    <td><input type="text" id="name" required /></td>
+                </tr>
+                <tr>
+                    <th><b>Account Number</b></th>
+                    <td><input type="text" id="acno" required /></td>
+
+                </tr>
+                <tr>
+                    <th><label for="Accounttype">Select an Account type :</label></th>
+                    <td>
+                        <select name="type" id="type">
+                            <option value="SB">Savings Account</option>
+                            <option value="CA">Current Account</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th><b>Address for Correspondance</b></th>
+                    <td><textarea id="address" name="address" rows="4" cols="50" required></textarea>
+                </tr>
+                <tr>
+                    <th><b>Phone Number</b></th>
+                    <td><input type="tel" id="phone" pattern="^[6-9]{1}[0-9]{9}$" required></td>
+                </tr>
+                <tr>
+                    <th><b>Email</b></th>
+                    <td>
+                        <input type="email" id="myEmail" name="email" pattern="^[a-z0-9._%+-]+@("@")[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th><b>Confirm to Submit</b></th>
+                    <td><button type="submit" class="submitbtn">Submit</button></td>
+                </tr>
+            </table>
+
+            <hr>
+        </div>
+    </form>
+
+
+</body>
+
+</html>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
