@@ -27,5 +27,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Beneficiaries">
+      <EntityTypeMapping TypeName="UserDBModel.Beneficiary">
+        <MappingFragment StoreEntitySet="Beneficiary">
+          <ScalarProperty Name="ifsccode" ColumnName="ifsccode" />
+          <ScalarProperty Name="branchname" ColumnName="branchname" />
+          <ScalarProperty Name="bankname" ColumnName="bankname" />
+          <ScalarProperty Name="accountnumber" ColumnName="accountnumber" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

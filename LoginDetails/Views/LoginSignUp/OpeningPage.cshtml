@@ -5,22 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        #body {
-            background-color: aqua
-        }
-
-        h1 {
-            text-align: center;
-            color: brown;
-            border: 2px
-        }
+    
+        <style >
+            body {
+                background-image: url('../Image/img.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            .header-text {
+                font-size: 5em;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%)translateY(-50%);
+                text-transform: uppercase;
+                font-family: "Lucida Console", "Courier New", "monospace";
+                color: #00203FFF;
+            }
+            .btn1 {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                position: absolute;
+                top: 80%;
+                left: 55%;
+                transform: translateX(-50%)translateY(-50%);
+            }
+            .btn2 {         
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                position: absolute;
+                top: 80%;
+                left: 44%;
+                transform: translateX(-50%)translateY(-50%);
+            }
+            .footer {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                position: absolute;
+                top: 95%;
+                left: 10%;
+                transform: translateX(-50%)translateY(-50%);
+                color:black;
+            }
+        
+        
     </style>
+        
+  
 </head>
-<body id="body">
-    <h1><b>Banking Account System</b></h1>
-    @Html.ActionLink("User Login? Click here", "Login")<br />
-    @Html.ActionLink("Admin Login? Click here", "AdminLogin")
+<body>
+ 
+    <div class="header-text">
+        banking account system
+    </div>
+    <div class="btn1">
+       
+        <form action="/LoginSignUp/AdminLogin/" >
+            <button class="btn btn-primary">ADMIN LOGIN</button>
+        </form>
+       
+    </div>
+    <div class="btn2">
+        <form action="/LoginSignUp/Login/" >
+            <button class="btn btn-primary">CUSTOMER LOGIN</button>
+        </form>
+    </div>
+    <div class="footer">
+  
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My Banking Application</p>
+        </footer>
+    </div>
+    
 </body>
 </html>
 

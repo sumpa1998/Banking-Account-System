@@ -22,6 +22,7 @@ namespace LoginDetails.Models
 
         [Required(ErrorMessage = "First Name is a required field")]
         public string FirstName { get; set; }
+
         [DisplayName("Last Name")]
         [StringLength(50, MinimumLength = 4)]
         [Required(ErrorMessage = "Last Name is a required field")]
@@ -33,11 +34,11 @@ namespace LoginDetails.Models
         [Required(ErrorMessage = "Age is a required field")]
         [Range(18, 100, ErrorMessage = "Age must be between 18-100 in years.")]
         public int Age { get; set; }
-
         [DisplayName("Email")]
         [Required(ErrorMessage = "Email is a required field")]
         [RegularExpression("^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$", ErrorMessage = "Invalid Email Format")]
         public string Email { get; set; }
+
         [DisplayName("Contact Number")]
         [RegularExpression("^[7-9][0-9]{9}$", ErrorMessage = "Please enter valid phone no.")]
         [Required(ErrorMessage = "Mobile no. is required")]
@@ -49,18 +50,19 @@ namespace LoginDetails.Models
         [Required(ErrorMessage = "Password is a required field")]
         [StringLength(20, MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [RegularExpression("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d^a-zA-Z0-9].{5,50}$", ErrorMessage = "Password Format is Worng")]
-
+        [RegularExpression("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d^a-zA-Z0-9].{5,50}$", ErrorMessage = "Invalid Login or Password ")]
         public string Password { get; set; }
         [DisplayName("Confirm Password")]
         [Required(ErrorMessage = "Confirm Password is a required field")]
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Password is not identical")]
         public string confirm_password { get; set; }
-
         [Required(ErrorMessage = "Account type is required field")]
         [DisplayName("Account Type")]
         public string AccountType { get; set; }
+        [DisplayName("Account Number")]
         public Nullable<decimal> AccountNumber { get; set; }
     }
 }
+
+

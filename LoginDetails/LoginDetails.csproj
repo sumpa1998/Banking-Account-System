@@ -128,12 +128,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminactionController.cs" />
     <Compile Include="Controllers\LoginSignUpController.cs" />
     <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Beneficiary.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
@@ -169,6 +173,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\img.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -216,6 +221,17 @@
     <Content Include="Views\Logout\Index.cshtml" />
     <Content Include="Views\LoginSignUp\AdminLogin.cshtml" />
     <Content Include="Views\LoginSignUp\AdminSignup.cshtml" />
+    <Content Include="Views\LoginSignUp\AtmCheckbook.cshtml" />
+    <Content Include="Views\LoginSignUp\UserDashboard.cshtml" />
+    <Content Include="Views\Adminaction\Create.cshtml" />
+    <Content Include="Views\Adminaction\Delete.cshtml" />
+    <Content Include="Views\Adminaction\Details.cshtml" />
+    <Content Include="Views\Adminaction\Edit.cshtml" />
+    <Content Include="Views\Adminaction\Index.cshtml" />
+    <Content Include="Views\LoginSignUp\Beneficiary.cshtml" />
+    <Content Include="Views\LoginSignUp\ForgotPass.cshtml" />
+    <Content Include="Views\LoginSignUp\CreatePass.cshtml" />
+    <Content Include="Views\LoginSignUp\Kyc.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

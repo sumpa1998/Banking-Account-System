@@ -17,16 +17,14 @@ namespace LoginDetails.Models
     public partial class Admin
     {
         public int Id { get; set; }
-        [DisplayName("User ID")]
-        [StringLength(20, MinimumLength = 4)]
-
+        [DisplayName("User Id")]
         [Required(ErrorMessage = "User Id is a required field")]
         public string userid { get; set; }
         [DisplayName("Password")]
         [Required(ErrorMessage = "Password is a required field")]
         [StringLength(20, MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [RegularExpression("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d^a-zA-Z0-9].{5,50}$", ErrorMessage = "Password Format is Worng")]
+        [RegularExpression("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d^a-zA-Z0-9].{5,50}$", ErrorMessage = "Invalid Password ")]
         public string password { get; set; }
         [DisplayName("Confirm Password")]
         [Required(ErrorMessage = "Confirm Password is a required field")]

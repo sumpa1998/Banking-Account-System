@@ -3,6 +3,12 @@
     ViewBag.Title = "Index";
 }
 @Html.Raw(TempData["loginmessage"])
+
+
 <h1> Welcome @Session["username"]</h1>
+
+<h3>@Html.ActionLink("ATM Request form", "AtmCheckbook", "LoginSignUp")</h3>
+<h3>@Html.ActionLink("Beneficiary Form", "Beneficiary", "LoginSignUp")</h3>
+<h3>@Html.ActionLink("KYC Form", "Kyc", "LoginSignUp")</h3>
 
 <h3>@Html.ActionLink("Logout", "Logout", "Logout")</h3>

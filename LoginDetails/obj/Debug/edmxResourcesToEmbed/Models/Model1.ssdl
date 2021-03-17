@@ -8,6 +8,18 @@
     <Property Name="userid" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="Beneficiary">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="accountnumber" Type="bigint" Nullable="false" />
+    <Property Name="bankname" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="branchname" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ifsccode" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="Id" />
@@ -26,6 +38,7 @@
   </EntityType>
   <EntityContainer Name="UserDBModelStoreContainer">
     <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Beneficiary" EntityType="Self.Beneficiary" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>
